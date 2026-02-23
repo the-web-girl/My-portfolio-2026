@@ -1,0 +1,115 @@
+/* Prevent layout shift */
+:root:has(.usa-js-modal--active) {
+  scrollbar-gutter: stable;
+}
+
+.jc-usa-modal:not([open]) {
+  opacity: 0;
+  position: absolute;
+  display: none;
+}
+
+.jc-usa-modal {
+  animation: fadeIn 0.15s ease-in forwards;
+  border: none;
+  display: flex;
+  align-self: center;
+  position: fixed;
+  font-size: 1.06rem;
+  line-height: 1.5;
+  border-radius: 0.5rem;
+  background: var(--eerie-black-2);
+  color: var(--light-gray);
+  margin: 1.25rem auto;
+  /* max-width: 30rem; */
+  opacity: 1;
+  scrollbar-color: lightGray transparent;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1050;
+  width: 100%;
+
+  .usa-modal__content{
+    display: block;
+    margin: 0 5%;
+  }
+
+  .usa-modal__main {
+    position: relative;
+
+    .modal__titles{
+      margin: 5% auto;
+    }
+
+    .modal__content-article{
+      ul {
+        margin: 10px auto;
+      }
+      .modal__list-article {
+        list-style: square!important;
+        padding: 0 10px;
+        color: var(--white-1);
+      }
+    }
+  }
+
+  .usa-modal__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid var(--light-gray);
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    color: var(--bittersweet-shimmer);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    outline: 2px solid var(--light-gray);
+
+    &:hover, &:active, &:focus{
+      outline-offset: 2px;
+      outline: 2px solid var(--bittersweet-shimmer);
+    }   
+  }
+  .modal__btn--end {
+    border: 1px solid var(--light-gray) ;
+    margin: 20px auto 35px;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    color: var(--bittersweet-shimmer);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 20px;
+    outline: 2px solid var(--light-gray);
+
+    &:hover, &:active, &:focus{
+      outline-offset: 2px;
+      outline: 2px solid var(--bittersweet-shimmer);
+    }   
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+::backdrop {
+  animation: fadeIn 0.15s ease-in forwards;
+  background-color: rgba(0, 0, 0, 0.7);
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
