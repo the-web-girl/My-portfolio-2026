@@ -746,6 +746,9 @@ main {
   filter: grayscale(1);
   transition: var(--transition-1);
 }
+.clients-logos {
+  color: red;
+}
 
 .clients-item img:hover { filter: grayscale(0); }
 
