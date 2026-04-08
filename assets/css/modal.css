@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Prevent layout shift */
 :root:has(.usa-js-modal--active) {
   scrollbar-gutter: stable;
@@ -20,86 +21,65 @@
   border-radius: 0.5rem;
   background: var(--eerie-black-2);
   color: var(--light-gray);
-
-  /* Responsive : occupe toute la largeur avec marges latérales sur mobile */
+  /* Responsive : occupe toute la largeur sur mobile avec marges latérales */
   width: calc(100% - 1.5rem);
-  max-width: 95%;
   margin: 0.75rem auto;
-
   /* Centrage horizontal dans le viewport */
   inset-inline-start: 0;
   inset-inline-end: 0;
-
-  /* Scroll interne si contenu trop long */
+  /* Scroll interne si contenu long */
   max-height: calc(100dvh - 1.5rem);
   overflow-y: auto;
-
   opacity: 1;
   scrollbar-color: lightGray transparent;
   text-align: left;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   z-index: 1050;
+  justify-content: center;
 }
-
 .jc-usa-modal .usa-modal__content {
   display: block;
+  /* Padding interne adapté au mobile */
   margin: 0;
   padding: 0 1rem;
 }
-
 @media (min-width: 480px) {
   .jc-usa-modal .usa-modal__content {
     padding: 0 5%;
   }
 }
-
 .jc-usa-modal .usa-modal__main {
   position: relative;
 }
-
 .jc-usa-modal .usa-modal__main .modal__titles {
+  /* Espace suffisant pour ne pas être masqué par le bouton fermer */
   margin: 5% auto;
-  /* Espace à droite pour ne pas être masqué par le bouton fermer */
   padding-right: 2rem;
 }
-
 .jc-usa-modal .usa-modal__main .modal__titles h1 {
   font-size: clamp(0.9rem, 4vw, 1.25rem);
   line-height: 1.4;
   word-break: break-word;
 }
-
 .jc-usa-modal .usa-modal__main .modal__titles h2 {
   font-size: clamp(0.8rem, 3.5vw, 1rem);
   line-height: 1.4;
   word-break: break-word;
 }
-
-.jc-usa-modal .usa-modal__main .modal__project-container {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto 2%;
-}
 .jc-usa-modal .usa-modal__main .modal__project-container img {
-  width: 90%;
+  width: 100%;
   height: auto;
   display: block;
   border-radius: 0.25rem;
 }
-.jc-usa-modal .usa-modal__main p {
-  margin: 2% auto;
-  text-align: center;
-}
 .jc-usa-modal .usa-modal__main .modal__content-article ul {
   margin: 10px auto;
 }
-
 .jc-usa-modal .usa-modal__main .modal__content-article .modal__list-article {
   list-style: square !important;
   padding: 0 10px;
   color: var(--white-1);
 }
-
 .jc-usa-modal .usa-modal__close {
   position: absolute;
   top: 0;
@@ -108,7 +88,7 @@
   margin: 5px;
   width: 28px;
   height: 28px;
-  min-width: 28px;
+  min-width: 28px; /* accessibilité : cible tactile suffisante */
   text-align: center;
   color: var(--bittersweet-shimmer);
   justify-content: center;
@@ -117,19 +97,15 @@
   outline: 2px solid var(--light-gray);
   flex-shrink: 0;
 }
-
-.jc-usa-modal .usa-modal__close:hover,
-.jc-usa-modal .usa-modal__close:active,
-.jc-usa-modal .usa-modal__close:focus {
+.jc-usa-modal .usa-modal__close:hover, .jc-usa-modal .usa-modal__close:active, .jc-usa-modal .usa-modal__close:focus {
   outline-offset: 2px;
   outline: 2px solid var(--bittersweet-shimmer);
 }
-
 .jc-usa-modal .modal__btn--end {
   border: 1px solid var(--light-gray);
   margin: 20px auto 35px;
   height: auto;
-  min-height: 44px;
+  min-height: 44px; /* accessibilité : cible tactile */
   width: auto;
   min-width: 100px;
   text-align: center;
@@ -140,14 +116,10 @@
   padding: 10px 20px;
   outline: 2px solid var(--light-gray);
 }
-
-.jc-usa-modal .modal__btn--end:hover,
-.jc-usa-modal .modal__btn--end:active,
-.jc-usa-modal .modal__btn--end:focus {
+.jc-usa-modal .modal__btn--end:hover, .jc-usa-modal .modal__btn--end:active, .jc-usa-modal .modal__btn--end:focus {
   outline-offset: 2px;
   outline: 2px solid var(--bittersweet-shimmer);
 }
-
 @media (prefers-reduced-motion: reduce) {
   .jc-usa-modal {
     animation: none;
@@ -158,7 +130,6 @@
   animation: fadeIn 0.15s ease-in forwards;
   background-color: rgba(0, 0, 0, 0.7);
 }
-
 @media (prefers-reduced-motion: reduce) {
   ::backdrop {
     animation: none;
@@ -172,4 +143,4 @@
   to {
     opacity: 1;
   }
-}
+}/*# sourceMappingURL=modal.css.map */

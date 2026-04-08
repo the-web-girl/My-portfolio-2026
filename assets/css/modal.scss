@@ -23,7 +23,7 @@
 
   /* Responsive : occupe toute la largeur sur mobile avec marges latérales */
   width: calc(100% - 1.5rem);
-  max-width: 40rem;
+  // max-width: 40rem;
   margin: 0.75rem auto;
 
   /* Centrage horizontal dans le viewport */
@@ -39,6 +39,8 @@
   text-align: left;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   z-index: 1050;
+
+  justify-content: center;
 
   .usa-modal__content {
     display: block;
